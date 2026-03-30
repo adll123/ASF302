@@ -4,7 +4,13 @@
 参照[ASFCN](https://github.com/sffxzzp/ASFcn/)修改的[ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm)镜像，使用 [Steamcommunity302](https://www.dogfight360.com/blog/18682/)进行反代。
 
 # 使用方法
-**拉取镜像：** `docker push kb1000fx/asf302`
+**拉取镜像：** 
+```bash
+#docker hub镜像源
+docker push kb1000fx/asf302:latest
+#ghcr镜像源
+docker pull ghcr.io/kb1000fx/asf302:latest
+```
 
 **默认IPC密码：** asf123456
 
