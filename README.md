@@ -1,21 +1,58 @@
-# 简介
+# ASF302 - 国内 VPS 挂卡集成镜像
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/kb1000fx/asf302?style=flat-square)](https://github.com/kb1000fx/ASF302)
+[![License](https://img.shields.io/github/license/kb1000fx/ASF302?style=flat-square)](https://github.com/kb1000fx/ASF302/blob/main/LICENSE)
 
-感谢大佬kb1000fx参照[ASFCN](https://github.com/sffxzzp/ASFcn/)修改的[ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm)镜像，使用 [Steamcommunity302](https://www.dogfight360.com/blog/18682/)进行反代。整合一起救了国内VPS挂卡！
+## 📖 简介
 
-# 使用方法
-**拉取镜像：** 
+本镜像是由 **kb1000fx** 参照 [ASFCN](https://github.com/sffxzzp/ASFcn/) 项目修改优化的 [ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm) 版本。
+
+**核心特性：**
+- **内置反代：** 整合了 [Steamcommunity302](https://www.dogfight360.com/blog/18682/)。
+- **专为国内优化：** 彻底解决国内 VPS 无法连接 Steam 登录服务器的问题，实现顺畅挂卡。
+
+---
+
+## 🚀 使用方法
+
+### 1. 拉取镜像
+
+推荐使用作者原版镜像，也可选择我的自用备份版：
+
 ```bash
-
-#kb1000fx大佬ghcr镜像源
+# 作者官方镜像 (推荐)
 docker pull ghcr.io/kb1000fx/asf302:latest
-```
 
-#我自用ghcr镜像源
+# 本人自用备份镜像
 docker pull ghcr.io/adll123/asf302:latest
-```
 
-**默认IPC密码：** asf123456
+# 🛠️ 配置与资源
 
-**ASF配置方法：** [ArchiSteamFarm wiki](https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Home-zh-CN)
-**感谢大佬整合：** [kb1000fx/ASF302](https://github.com/kb1000fx/ASF302)
+### 🔑 访问信息
+
+> [!TIP]
+> 建议在首次成功登录后，前往配置文件修改默认密码以增强安全性。
+
+| 项目 | 内容 |
+| :--- | :--- |
+| **默认 IPC 密码** | `asf123456` |
+| **Web UI 地址** | `http://你的服务器IP:1242` |
+
+---
+
+### 📚 相关文档
+
+* 📖 **ASF 官方教程**：[ArchiSteamFarm Wiki (中文)](https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Home-zh-CN)
+* 🌐 **反代工具官网**：[Steamcommunity302 (Dogfight360)](https://www.dogfight360.com/blog/18682/)
+* 💾 **项目原仓库**：[kb1000fx/ASF302](https://github.com/kb1000fx/ASF302)
+
+---
+
+### 🙏 致谢
+
+感谢以下开发者及其项目的开源贡献，没有他们的工作就没有这个集成镜像：
+
+* **[JustArchiNET](https://github.com/JustArchiNET/ArchiSteamFarm)** - ASF 核心开发者
+* **[kb1000fx](https://github.com/kb1000fx/ASF302)** - 镜像整合与优化制作
+* **[sffxzzp](https://github.com/sffxzzp/ASFcn/)** - 提供 ASFCN 修改思路
+* **[Dogfight360](https://www.dogfight360.com/blog/18682/)** - Steamcommunity302 作者
