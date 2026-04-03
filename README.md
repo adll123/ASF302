@@ -1,7 +1,6 @@
 # ASF302 - 国内 VPS 挂卡集成镜像
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/kb1000fx/asf302?style=flat-square)](https://github.com/kb1000fx/ASF302)
-[![License](https://img.shields.io/github/license/kb1000fx/ASF302?style=flat-square)](https://github.com/kb1000fx/ASF302/blob/main/LICENSE)
+
 
 ## 📖 简介
 
@@ -9,7 +8,6 @@
 
 **核心特性：**
 - **内置反代：** 整合了 [Steamcommunity302](https://www.dogfight360.com/blog/18682/)。
-- **专为国内优化：** 彻底解决国内 VPS 无法连接 Steam 登录服务器的问题，实现顺畅挂卡。
 
 ---
 
@@ -19,7 +17,6 @@
 
 推荐使用作者原版镜像，也可选择我的自用备份版：
 
-```bash
 # 作者官方镜像 (推荐)
 docker pull ghcr.io/kb1000fx/asf302:latest
 
@@ -50,7 +47,7 @@ docker pull ghcr.io/adll123/asf302:latest
 
 ### 🙏 致谢
 
-感谢以下开发者及其项目的开源贡献，没有他们的工作就没有这个集成镜像：
+感谢以下开发者及其项目的开源贡献：
 
 * **[JustArchiNET](https://github.com/JustArchiNET/ArchiSteamFarm)** - ASF 核心开发者
 * **[kb1000fx](https://github.com/kb1000fx/ASF302)** - 镜像整合与优化制作
