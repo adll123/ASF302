@@ -2,32 +2,37 @@ name: docker
 
 on:
   push:
+    branches: [ "main" ]  # 建议指定分支，避免每个测试分支都触发构建
 
 jobs:
   docker:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write # 必须赋予写入 Packages 的权限
+
     steps:
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v4
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      # 1. 检出代码（非常重要，漏掉这一步会导致找不到 Dockerfile）
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 登录到 GitHub Container Registry
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      -
-        name: Set up Docker Buildx
+          
+      # 3. 设置 Buildx (支持多架构构建)
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
-      -
-        name: Build and push
+
+      # 3. 构建并推送
+      - name: Build and push
         uses: docker/build-push-action@v7
         with:
+          context: . # 指定上下文为根目录
           platforms: linux/amd64
           push: true
-          tags: |
-            kb1000fx/asf302:latest
-            ghcr.io/kb1000fx/asf302:latest
+          tags: ghcr.io/${{ github.repository_owner }}/asf302:latest
