@@ -1,8 +1,9 @@
 name: docker
 
-on:
+于:
   push:
-    branches: [ "main" ]  # 建议指定分支，避免每个测试分支都触发构建
+    分支: [ "main" ]  # 建议指定分支，避免每个测试分支都触发构建
+    
 
 jobs:
   docker:
@@ -35,4 +36,4 @@ jobs:
           context: . # 指定上下文为根目录
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/asf302:latest
+          标签: ghcr.io/${{ github.repository_owner }}/asf302:latest
