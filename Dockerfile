@@ -1,4 +1,4 @@
-FROM ghcr.io/justarchinet/archisteamfarm:latest
+FROM ghcr.nju.edu.cn/justarchinet/archisteamfarm:latest
 ENV ASF_USER=asf
 ENV ASPNETCORE_URLS=
 ENV DOTNET_CLI_TELEMETRY_OPTOUT=true
