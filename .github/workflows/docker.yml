@@ -36,3 +36,6 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/asf302:latest
+          # 显式指定不导出缓存到远端（仅使用本地运行环境缓存）
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
