@@ -3,6 +3,10 @@ name: docker
 on:
   push:
     branches: [ "main" ]  # 建议指定分支，避免每个测试分支都触发构建
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - '.gitignore'
 
 jobs:
   docker:
