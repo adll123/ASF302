@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 35,
+  "revision": 1,
+  "settings": {
+    "network": {
+      "listenIP": "127.0.0.1",
+      "useProxyEnvironment": false
+    },
+    "engine": {
+      "httpPort": 80,
+      "httpsPort": 443,
+      "startupTimeoutSeconds": 8,
+      "startOnDaemonLaunch": true,
+      "startServiceOnAppLaunch": false
+    },
+    "rules": {
+      "enabled": [
+        "Steam_community"
+      ],
+      "quicEnabled": [],
+      "autoUpdate": true
+    },
+    "hosts": {
+      "autoModify": false,
+      "autoBackup": true,
+      "backupRetention": 10
+    },
+    "dns": {
+      "enabled": false,
+      "windowsDriver": "wfp",
+      "cdnRedirect": true,
+      "queryLog": false,
+      "customHosts": false,
+      "ttl": 300,
+      "upstreams": [
+        "223.5.5.5:53",
+        "119.29.29.29:53"
+      ],
+      "upstream": {
+        "enabled": false,
+        "servers": [
+          "h3://223.5.5.5/dns-query",
+          "https://120.53.53.53/dns-query"
+        ],
+        "fallbackServers": [
+          "https://doh.pub/dns-query",
+          "tls://1.12.12.12"
+        ],
+        "bootstrapServers": [
+          "119.29.29.29",
+          "180.76.76.76"
+        ],
+        "mode": "parallel",
+        "timeoutSeconds": 10,
+        "policy": {
+          "dnssec": false,
+          "disableIPv6": false,
+          "ednsClientSubnet": false,
+          "ednsUseCustomIP": false,
+          "ednsCustomIP": ""
+        },
+        "cache": {
+          "sizeBytes": 4194304,
+          "ttlMin": 0,
+          "ttlMax": 0,
+          "optimistic": false
+        }
+      },
+      "netfilterMode": "iptables",
+      "winDivertPriority": 0
+    },
+    "proxy": {
+      "autoModify": false,
+      "mode": "off"
+    },
+    "certificates": {
+      "validDays": 365
+    },
+    "cdn": {
+      "rateLimitMbps": 1000,
+      "upstreamDomain": "img-s-msn-com.akamaized.net",
+      "lastBenchmarkAt": 0,
+      "akamai": {
+        "enabled": false,
+        "forceQUIC": false,
+        "startupBenchmarkEnabled": true,
+        "startupBenchmarkCache": true,
+        "lastBenchmarkAt": 0,
+        "optimalIPv4": [],
+        "measurements": [],
+        "benchmark": {
+          "mode": "latency",
+          "randomPercentStart": 0,
+          "randomPercentEnd": 100,
+          "randomizeIPv4": true,
+          "ipList": [],
+          "downloadURL": "",
+          "quicDownloadURL": "",
+          "candidateLimit": 8,
+          "benchmarkBatchSize": 8,
+          "speedConcurrency": 8,
+          "minThroughputMbps": 10,
+          "resultLimit": 8
+        },
+        "automation": {
+          "enabled": false,
+          "healthIntervalMinutes": 60,
+          "fullIntervalHours": 24,
+          "windowEnabled": false,
+          "windowStart": "01:00",
+          "windowEnd": "06:00",
+          "certificateMinDays": 3,
+          "connectTimeoutSeconds": 5,
+          "maxLatencyMillis": 0,
+          "minHealthyIPs": 1,
+          "failureThreshold": 3,
+          "rateLimitMbps": 100,
+          "sampleDurationSeconds": 5,
+          "latencyConcurrency": 10,
+          "speedConcurrency": 2,
+          "minImprovementPercent": 15,
+          "retryIntervalMinutes": 30,
+          "lastHealthCheckAt": 0,
+          "lastFailureAt": 0,
+          "lastFailure": "",
+          "consecutiveFailures": 0,
+          "pendingFullBenchmark": false
+        }
+      },
+      "cloudfront": {
+        "enabled": false,
+        "forceQUIC": false,
+        "startupBenchmarkEnabled": true,
+        "startupBenchmarkCache": true,
+        "lastBenchmarkAt": 0,
+        "optimalIPv4": [],
+        "measurements": [],
+        "benchmark": {
+          "mode": "latency",
+          "randomPercentStart": 0,
+          "randomPercentEnd": 100,
+          "randomizeIPv4": true,
+          "ipList": [],
+          "downloadURL": "",
+          "quicDownloadURL": "",
+          "candidateLimit": 8,
+          "benchmarkBatchSize": 8,
+          "speedConcurrency": 8,
+          "minThroughputMbps": 10,
+          "resultLimit": 8
+        },
+        "automation": {
+          "enabled": false,
+          "healthIntervalMinutes": 60,
+          "fullIntervalHours": 24,
+          "windowEnabled": false,
+          "windowStart": "01:00",
+          "windowEnd": "06:00",
+          "certificateMinDays": 3,
+          "connectTimeoutSeconds": 5,
+          "maxLatencyMillis": 0,
+          "minHealthyIPs": 1,
+          "failureThreshold": 3,
+          "rateLimitMbps": 100,
+          "sampleDurationSeconds": 5,
+          "latencyConcurrency": 10,
+          "speedConcurrency": 2,
+          "minImprovementPercent": 15,
+          "retryIntervalMinutes": 30,
+          "lastHealthCheckAt": 0,
+          "lastFailureAt": 0,
+          "lastFailure": "",
+          "consecutiveFailures": 0,
+          "pendingFullBenchmark": false
+        }
+      },
+      "cloudflare": {
+        "enabled": false,
+        "forceQUIC": false,
+        "startupBenchmarkEnabled": true,
+        "startupBenchmarkCache": true,
+        "lastBenchmarkAt": 0,
+        "optimalIPv4": [],
+        "measurements": [],
+        "benchmark": {
+          "mode": "latency",
+          "randomPercentStart": 0,
+          "randomPercentEnd": 100,
+          "randomizeIPv4": true,
+          "ipList": [],
+          "downloadURL": "",
+          "quicDownloadURL": "",
+          "candidateLimit": 8,
+          "benchmarkBatchSize": 8,
+          "speedConcurrency": 8,
+          "minThroughputMbps": 10,
+          "resultLimit": 8
+        },
+        "automation": {
+          "enabled": false,
+          "healthIntervalMinutes": 60,
+          "fullIntervalHours": 24,
+          "windowEnabled": false,
+          "windowStart": "01:00",
+          "windowEnd": "06:00",
+          "certificateMinDays": 3,
+          "connectTimeoutSeconds": 5,
+          "maxLatencyMillis": 0,
+          "minHealthyIPs": 1,
+          "failureThreshold": 3,
+          "rateLimitMbps": 100,
+          "sampleDurationSeconds": 5,
+          "latencyConcurrency": 10,
+          "speedConcurrency": 2,
+          "minImprovementPercent": 15,
+          "retryIntervalMinutes": 30,
+          "lastHealthCheckAt": 0,
+          "lastFailureAt": 0,
+          "lastFailure": "",
+          "consecutiveFailures": 0,
+          "pendingFullBenchmark": false
+        }
+      },
+      "fastly": {
+        "enabled": false,
+        "forceQUIC": false,
+        "startupBenchmarkEnabled": true,
+        "startupBenchmarkCache": true,
+        "lastBenchmarkAt": 0,
+        "optimalIPv4": [],
+        "measurements": [],
+        "benchmark": {
+          "mode": "latency",
+          "randomPercentStart": 0,
+          "randomPercentEnd": 100,
+          "randomizeIPv4": true,
+          "ipList": [],
+          "downloadURL": "",
+          "quicDownloadURL": "",
+          "candidateLimit": 8,
+          "benchmarkBatchSize": 8,
+          "speedConcurrency": 8,
+          "minThroughputMbps": 10,
+          "resultLimit": 8
+        },
+        "automation": {
+          "enabled": false,
+          "healthIntervalMinutes": 60,
+          "fullIntervalHours": 24,
+          "windowEnabled": false,
+          "windowStart": "01:00",
+          "windowEnd": "06:00",
+          "certificateMinDays": 3,
+          "connectTimeoutSeconds": 5,
+          "maxLatencyMillis": 0,
+          "minHealthyIPs": 1,
+          "failureThreshold": 3,
+          "rateLimitMbps": 100,
+          "sampleDurationSeconds": 5,
+          "latencyConcurrency": 10,
+          "speedConcurrency": 2,
+          "minImprovementPercent": 15,
+          "retryIntervalMinutes": 30,
+          "lastHealthCheckAt": 0,
+          "lastFailureAt": 0,
+          "lastFailure": "",
+          "consecutiveFailures": 0,
+          "pendingFullBenchmark": false
+        }
+      },
+      "fastlyGroups": {
+        "a": {
+          "optimalIPv4": [],
+          "measurements": []
+        },
+        "b": {
+          "optimalIPv4": [],
+          "measurements": []
+        },
+        "c": {
+          "optimalIPv4": [],
+          "measurements": []
+        },
+        "d": {
+          "optimalIPv4": [],
+          "measurements": []
+        }
+      }
+    },
+    "ech": {
+      "enabled": true,
+      "allowedDomains": [],
+      "configSources": [
+        "cloudflare-ech.com",
+        "crypto.cloudflare.com",
+        "cloudflarechallenge.com"
+      ],
+      "targetSources": [
+        "parsec.app.cdn.cloudflare.net",
+        "mod.io.cdn.cloudflare.net",
+        "steamdb.info.cdn.cloudflare.net"
+      ],
+      "dnsServer": "223.5.5.5:53, 119.29.29.29:53",
+      "enableIPv6": false,
+      "ipv6Only": false,
+      "enableH2WebSocket": false,
+      "enableQUIC": false,
+      "enableQUICFingerprint": false,
+      "forceCloudflareOptimalIP": false,
+      "tlsFingerprint": "chromium",
+      "outboundPort": 443,
+      "dnsQueryTimeoutSeconds": 5,
+      "configCacheSeconds": 7200,
+      "configRefreshSeconds": 300,
+      "targetRefreshSeconds": 120,
+      "targetDnsTTLSeconds": 60,
+      "connectTimeoutSeconds": 5,
+      "tcpKeepAliveSeconds": 30,
+      "tlsHandshakeTimeoutSeconds": 7,
+      "responseHeaderTimeoutSeconds": 20,
+      "expectContinueTimeoutSeconds": 1,
+      "h2ReadIdleTimeoutSeconds": 30,
+      "h2PingTimeoutSeconds": 15,
+      "webSocketHandshakeTimeoutSeconds": 10,
+      "inboundReadHeaderTimeoutSeconds": 10,
+      "inboundIdleTimeoutSeconds": 120,
+      "outboundIdleTimeoutSeconds": 90,
+      "shutdownTimeoutSeconds": 10,
+      "failureCooldownSeconds": 30,
+      "failureCooldownMaxSeconds": 300,
+      "retryBackoffMillis": 250,
+      "maxConnectAttempts": 3,
+      "sessionCacheEntries": 128,
+      "maxIdleConnections": 128,
+      "maxIdleConnectionsPerHost": 32,
+      "maxConnectionsPerHost": 64,
+      "maxReplayBodyBytes": 2097152
+    },
+    "twitch": {
+      "enabled": true
+    },
+    "support": {
+      "enabled": true,
+      "timeUnit": "week",
+      "lastOpenedAt": 0
+    },
+    "logs": {
+      "filterDNSQueries": false
+    }
+  }
+}
