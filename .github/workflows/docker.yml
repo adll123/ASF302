@@ -1,6 +1,8 @@
 name: docker
 
 on:
+  workflow_dispatch:
+  
   push:
     branches: [ "main" ]  # 建议指定分支，避免每个测试分支都触发构建
     paths-ignore:
@@ -39,6 +41,7 @@ jobs:
           context: . # 指定上下文为根目录
           platforms: linux/amd64
           push: true
+          pull: true
           tags: ghcr.io/${{ github.repository_owner }}/asf302:latest
           # 显式指定不导出缓存到远端（仅使用本地运行环境缓存）
           cache-from: type=gha
