@@ -26,6 +26,9 @@ chown 1000:1000 /run/s302/1000
 chmod 755 /run/s302/1000
 
 # 启动 S302
+chmod +x ./steamcommunity_302.caddy
+chmod +x ./steamcommunity_302.cli
+
 ./steamcommunity_302.cli \
     -allowed-uid 1000 \
     -runtime-dir /run/s302/1000 \
