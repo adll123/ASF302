@@ -18,7 +18,7 @@
 ### 作者官方镜像 (推荐)
 docker pull ghcr.io/kb1000fx/asf302:latest
 
-### 本人自用备份镜像
+### 本人自用备份镜像（20261116更新：ASFV6.3.11.7、S302V15.0.9）
 docker pull ghcr.io/adll123/asf302:latest
 
 ## 🛠️ 配置与资源
