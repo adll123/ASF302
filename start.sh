@@ -26,13 +26,32 @@ chown 1000:1000 /run/s302/1000
 chmod 755 /run/s302/1000
 
 # 启动 S302
-chmod +x ./steamcommunity_302.caddy
-chmod +x ./steamcommunity_302.cli
-
 ./steamcommunity_302.cli \
     -allowed-uid 1000 \
     -runtime-dir /run/s302/1000 \
     -start-service &
+
+# 等待 S302 生成根证书
+ROOT_CERT="/var/lib/Steamcommunity_302/caddy-storage/pki/authorities/local/root.crt"
+
+for i in {1..30}; do
+    if [ -s "$ROOT_CERT" ]; then
+        break
+    fi
+    sleep 1
+done
+
+# 检查根证书是否生成成功
+if [ ! -s "$ROOT_CERT" ]; then
+    echo "ERROR: S302 根证书生成失败，无法启动 ASF"
+    exit 1
+fi
+
+# 安装 S302 根证书到系统信任库
+install -m 0644 "$ROOT_CERT" \
+    /usr/local/share/ca-certificates/steamcommunity-302.crt
+
+update-ca-certificates
 
 # 启动 ASF
 exec /asf/ArchiSteamFarm-Service.sh --no-restart --system-required
