@@ -50,6 +50,24 @@ if [ ! -s "$ROOT_CERT" ]; then
     exit 1
 fi
 
+# 等待 S302 HTTP/CONNECT 代理就绪
+S302_READY=0
+
+for i in {1..30}; do
+    if ( : > /dev/tcp/127.0.0.1/80 ) 2>/dev/null; then
+        S302_READY=1
+        break
+    fi
+    sleep 1
+done
+
+if [ "$S302_READY" -ne 1 ]; then
+    echo "ERROR: S302 HTTP/CONNECT 代理启动失败，无法启动 ASF"
+    exit 1
+fi
+
+echo "S302 HTTP/CONNECT 代理已就绪"
+
 # 安装 S302 根证书到系统信任库
 install -m 0644 "$ROOT_CERT" \
     /usr/local/share/ca-certificates/steamcommunity-302.crt
@@ -60,4 +78,4 @@ if ! update-ca-certificates; then
 fi
 
 # 启动 ASF
-exec /asf/ArchiSteamFarm-Service.sh --no-restart --system-required
+exec /asf/ArchiSteamFarm-Service.sh --no-restart
