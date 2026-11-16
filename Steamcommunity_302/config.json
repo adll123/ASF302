@@ -15,7 +15,10 @@
     },
     "rules": {
       "enabled": [
-        "Steam_community"
+        "Steam_community",
+        "Steam_store",
+        "Steam_API",
+        "github"
       ],
       "quicEnabled": [],
       "autoUpdate": true
