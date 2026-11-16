@@ -54,7 +54,10 @@ fi
 install -m 0644 "$ROOT_CERT" \
     /usr/local/share/ca-certificates/steamcommunity-302.crt
 
-update-ca-certificates
+if ! update-ca-certificates; then
+    echo "ERROR: 系统根证书更新失败，无法启动 ASF"
+    exit 1
+fi
 
 # 启动 ASF
 exec /asf/ArchiSteamFarm-Service.sh --no-restart --system-required
